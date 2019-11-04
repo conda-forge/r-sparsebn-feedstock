@@ -1,4 +1,4 @@
-{% set version = '0.0.5' %}
+{% set version = "0.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sparsebn_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sparsebn/sparsebn_{{ version }}.tar.gz
-  sha256: 0c2ef11c775d406b4630aafc8e87dd7c8f188d569056851241e9df24bf2d61a4
+  sha256: 3bd841df641d48305860e5a9b236983b6736a35a4d64c61fdb6a3c5a1637cbb8
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
