@@ -1,4 +1,4 @@
-{% set version = '0.0.5' %}
+{% set version = '0.1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sparsebn_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sparsebn/sparsebn_{{ version }}.tar.gz
-  sha256: 0c2ef11c775d406b4630aafc8e87dd7c8f188d569056851241e9df24bf2d61a4
+  sha256: 3bd841df641d48305860e5a9b236983b6736a35a4d64c61fdb6a3c5a1637cbb8
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,7 +22,7 @@ build:
 
 requirements:
   build:
-
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-ccdralgorithm >=0.0.4
@@ -42,14 +41,36 @@ test:
 
 about:
   home: https://github.com/itsrainingdata/sparsebn
-  license: GPL (>= 2)
+  license: GPL-2
   summary: Fast methods for learning sparse Bayesian networks from high-dimensional data using
     sparse regularization, as described in Aragam, Gu, and Zhou (2017) <arXiv:1703.04025>.
     Designed to handle mixed experimental and observational data with thousands of variables
     with either continuous or discrete observations.
-  license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_family: GPL2
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
+
+# Package: sparsebn
+# Title: Learning Sparse Bayesian Networks from High-Dimensional Data
+# Version: 0.1.0
+# Date: 2019-11-05
+# Authors@R: c( person("Bryon", "Aragam", email = "sparsebn@gmail.com", role = c("aut", "cre")), person("Jiaying", "Gu", role = c("aut")), person("Dacheng", "Zhang", role = c("aut")), person("Qing", "Zhou", role = c("aut")) )
+# Maintainer: Bryon Aragam <sparsebn@gmail.com>
+# Description: Fast methods for learning sparse Bayesian networks from high-dimensional data using sparse regularization, as described in Aragam, Gu, and Zhou (2017) <arXiv:1703.04025>. Designed to handle mixed experimental and observational data with thousands of variables with either continuous or discrete observations.
+# Depends: R (>= 3.2.3), sparsebnUtils (>= 0.0.5), ccdrAlgorithm (>= 0.0.4), discretecdAlgorithm (>= 0.0.5)
+# Suggests: knitr, rmarkdown, mvtnorm, igraph, graph, testthat
+# URL: https://github.com/itsrainingdata/sparsebn
+# BugReports: https://github.com/itsrainingdata/sparsebn/issues
+# License: GPL (>= 2)
+# RoxygenNote: 6.1.1
+# VignetteBuilder: knitr
+# LazyData: true
+# NeedsCompilation: no
+# Packaged: 2019-11-04 18:25:46 UTC; naragam
+# Author: Bryon Aragam [aut, cre], Jiaying Gu [aut], Dacheng Zhang [aut], Qing Zhou [aut]
+# Repository: CRAN
+# Date/Publication: 2019-11-04 19:50:02 UTC

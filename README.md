@@ -3,7 +3,7 @@ About r-sparsebn
 
 Home: https://github.com/itsrainingdata/sparsebn
 
-Package license: GPL (>= 2)
+Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
