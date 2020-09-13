@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sparsebn_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sparsebn/sparsebn_{{ version }}.tar.gz
-  sha256: b895cd6feb432c8f0aa26672362b5e9c23c7f630f38810e6b5f0d10a8b032abb
+  sha256: 85f1b4c912ed27db5ac4ae7defcfb79ddc7494be1df7239499ac573b6c0026ac
 
 build:
   merge_build_host: true  # [win]
