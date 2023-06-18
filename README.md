@@ -1,11 +1,11 @@
-About r-sparsebn
-================
+About r-sparsebn-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sparsebn-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/itsrainingdata/sparsebn
 
 Package license: GPL-2
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sparsebn-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fast methods for learning sparse Bayesian networks from high-dimensional data using sparse regularization, as described in Aragam, Gu, and Zhou (2017) <arXiv:1703.04025>. Designed to handle mixed experimental and observational data with thousands of variables with either continuous or discrete observations.
 
